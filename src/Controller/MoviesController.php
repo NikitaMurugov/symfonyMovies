@@ -8,17 +8,22 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MoviesController extends AbstractController
 {
-    #[Route('/movies', name: 'app_movies')]
+       
+    
+    #[Route("/movies", name:"movies")]
     public function index(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/MoviesController.php',
+        return $this->render('index.html.twig', [
+            'title' => 'Avengers: endgame',
         ]);
     }
     
-    public function newMethod(): Response
+    #[Route("/movie/{name}", name:"movies_show", defaults: ['name' => null], methods:["GET","HEAD"])]
+    public function show($name): Response
     {
-        
+        return $this->json([
+            'message' => "Show the {$name} movie!",
+            'path' => 'src/Controller/MoviesController.php',
+        ]);
     }
 }
