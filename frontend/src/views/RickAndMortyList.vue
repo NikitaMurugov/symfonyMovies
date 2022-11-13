@@ -7,5 +7,8 @@
 <script>
     export default {
         name: "rick-and-morty-list",
+        create() {
+            this.$store.dispatch('fetchCharacters');
+        }
     }
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div class="card">
         <div class="card__header">
-            character block
+            {{ message }}
         </div>
         <div class="card__body">
 
@@ -10,7 +10,20 @@
 </template>
 
 <script>
-
+    export default {
+        name: "rick-and-morty-character",
+        data() {
+            return {
+            }
+        }, 
+        props: {
+            title: String,
+            message: String,
+        }, 
+        created() {
+            this.$emit('initialize');
+        },
+    }
 </script>
 
 <style lang="scss">
