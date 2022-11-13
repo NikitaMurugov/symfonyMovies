@@ -19,15 +19,30 @@
         width: 900px;
         margin: 0 auto;
     }
-    nav {
-        width: 500px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-        a {
 
+    div {
+        box-sizing: border-box;
+    } 
+
+    nav {
+        font-size: 1.5rem;
+        margin-bottom: 1em;
+        a {
             text-decoration: none;
             font-weight: 700;
+            color: #596f84
+        }
+        a:after {
+            content: " |"
+        }
+        a:before {
+            content: " "
+        }
+        a:last-child:after {
+            content: ""
+        }
+        a.active {
+            color: #2c3e50
         }
     }
 </style>
