@@ -1,0 +1,11 @@
+api:
+    resource: ../../src/Controller/Api/
+    prefix: /api
+    name_prefix: api.
+    type: annotation
+    defaults: 
+        _type: json
+
+controllers:
+    resource: ../../src/Controller/Client/
+    type: annotation
